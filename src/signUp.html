@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="icon" href="/Img/logo-browser.jpg">
+    <link rel="icon" href="https://cms.istad.co/uploads/small_logo_browser_29b0eb400e.jpg">
     <!-- tailwind css link -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- my style -->
@@ -21,7 +21,7 @@
           <!-- Logo and Category Link -->
           <a href="/src/index.html"
             class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="/Img/logo.png" alt="Khmer-Mart Logo"
+            <img src="https://cms.istad.co/uploads/logo_642a242d12.png" alt="Khmer-Mart Logo"
               class="h-20 w-15 ms-[-10px]">
           </a>
           <!--  Category -->
@@ -40,7 +40,7 @@
               </svg>
             </span>
           </a>
-
+    
           <!-- Search Bar -->
           <div
             class="relative flex  flex-wrap sm:w-[350px] w-[220px] xl:w-[500px]  lg:w-[400px] justify-between ms-[-30px] ">
@@ -57,7 +57,7 @@
             <input type="text" placeholder="Search for anything"
               class="py-2 pl-8 pr-3 border border-[#f5f5f5] rounded-full focus:outline-none focus:ring-1 focus:ring-[#1A6E09]  w-full  space-x-4 xl:w-[500px] ">
           </div>
-
+    
           <button data-collapse-toggle="navbar-default" type="button"
             class="inline-flex items-center me-[-10px] w-10 h-10 justify-center text-xl text-[#1A6E09] rounded-lg md:hidden hover:bg-gray-100 focus:outline-none  "
             aria-controls="navbar-default" aria-expanded="false">
@@ -73,7 +73,7 @@
             <ul
               class="font-medium flex flex-col justify-around p-0 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-3 rtl:space-x-reverse md:mt-0 md:border-0 md:dark:bg-[#f5f5f5] dark:bg-[#f5f5f5] md:dark:bg-[#f5f5f5]dark:border-gray-700">
               <li>
-                <a href="/src/favourite.html"
+                <a href="/src/signIn.html"
                   class=" hidden text-[#1A6E09] hover:text-gray-300 items-center space-x-0 md:block ">
                   <svg class="w-6 h-6 text-gray-800 dark:text-black  md:mt-0"
                     aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -85,13 +85,13 @@
                 </a>
               </li>
               <li>
-                <a href="/src/favourite.html"
+                <a href="/src/category.html"
                   class="block py-2 px-0 hover:bg-none
                   md:hover:bg-transparent md:border-0 md:hover:text-[#363636]  md:p-0 text-[#1A6E09]  hover:text-[#FF9E37] 
                    md:dark:hover:bg-transparent md:hidden">Category</a>
               </li>
               <li>
-                <a href="/src/favourite.html"
+                <a href="/src/signIn.html"
                   class="block py-2 px-0  hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#363636]  md:p-0 text-[#1A6E09]   hover:text-[#FF9E37] md:dark:hover:bg-transparent md:hidden">Favorite
                   List</a>
               </li>
@@ -105,7 +105,7 @@
                   class="block py-2 px-0 text-[#1A6E09]  hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#363636]  md:p-0    hover:text-[#FF9E37] md:dark:hover:bg-transparent">Sign
                   In</a>
               </li>
-
+    
             </ul>
           </div>
         </div>
@@ -121,21 +121,17 @@
           <section class="space-y-4 mt-8">
             <section class="flex flex-wrap gap-4 "> 
               <div class="">
-                <label class="block text-[16px] font-semibold text-inter my-2 text-[#363636]">First Name</label>
-                <input class="bg-[#f5f5f5] rounded-xl border border-[#1A6E09] focus:border-[#1A6E09] focus:ring-[#1A6E09] focus:outline-none focus:ring-2 w-[250px] h-[55px] p-2.5" type="text" placeholder="Your First Name" id="firstName" required>
-              </div>
-              <div class="">
-                <label class="block text-[16px] font-semibold text-inter my-2 text-[#363636]">Last Name</label>
-                <input class="bg-[#f5f5f5] rounded-xl border border-[#1A6E09] focus:border-[#1A6E09]  focus:ring-[#1A6E09] focus:outline-none focus:ring-2 w-[250px] h-[55px] p-2.5" type="text" placeholder="Your Last Name" id="lastName" required>
+                <label class="block text-[16px] font-semibold text-inter my-2 text-[#363636]">Username</label>
+                <input class="bg-[#f5f5f5] rounded-xl border border-[#1A6E09] focus:border-[#1A6E09] focus:ring-[#1A6E09] focus:outline-none focus:ring-2 md:w-[525px] h-[55px] p-2.5" type="text" placeholder="Your First Name" id="username" required>
               </div>
             </section>
             <section class="space-y-4">
               <div class="">
                 <label class="block mb-2 text-[16px] font-semibold text-inter text-[#363636] ">Email</label>
-                <input class="bg-[#f5f5f5] rounded-xl border border-[#1A6E09] focus:border-[#1A6E09] focus:outline-none focus:ring-2 xl:w-[525px] md:w-[525px] sm:w-[450px] h-[55px] p-2.5  focus:ring-[#1A6E09]" type="email" placeholder="Your Email" id="email" required>
+                <input class="bg-[#f5f5f5] rounded-xl border border-[#1A6E09] focus:border-[#1A6E09] focus:outline-none focus:ring-2 xl:w-[525px] md:w-[525px] sm:w-[450px] h-[55px] p-2.5  focus:ring-[#1A6E09]" type="text" placeholder="Your Email" id="email" required>
               
                 <label class="block text-[16px] font-semibold text-inter mb-2 mt-4 text-[#363636]">Password</label>
-                <input class="bg-[#f5f5f5] rounded-xl border border-[#1A6E09] focus:border-[#1A6E09] focus:outline-none focus:ring-2 xl:w-[525px] md:w-[525px] sm:w-[450px] h-[55px] p-2.5 first-letter: focus:ring-[#1A6E09]" type="password" placeholder="••••••••" id="password" required>
+                <input class="bg-[#f5f5f5] rounded-xl border border-[#1A6E09] focus:border-[#1A6E09] focus:outline-none focus:ring-2 xl:w-[525px] md:w-[525px] sm:w-[450px] h-[55px] p-2.5 first-letter: focus:ring-[#1A6E09]" type="text" placeholder="••••••••" id="password" required>
               </div>
               <div class="flex items-start mt-4">
                 <div class="flex items-center ">
@@ -264,7 +260,7 @@
         <div
           class="mb-2 md:mb-0  ">
           <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="/Img/logo.png" alt="Khmer-Mart Logo" class="max-h-32 md:ms-[-10px]  ms-[-23px] ">
+            <img src="https://cms.istad.co/uploads/logo_642a242d12.png" alt="Khmer-Mart Logo" class="max-h-32 md:ms-[-10px]  ms-[-23px] ">
           </a>
         </div>
         <div
@@ -425,7 +421,7 @@
                     </svg>
                   </a>
                 </li>
-              </ul>
+              </ul>   
 
             </div>
           </div>

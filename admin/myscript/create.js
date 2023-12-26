@@ -1,55 +1,115 @@
-'use strict'
-// create item for title, des, price and img
-// select element
-const nameElement = document.querySelector('#name');
-const feeElement = document.querySelector('#fee');
-const discountElement = document.querySelector('#discount');
-const ratingElement = document.querySelector('#rating');
-const createElement = document.querySelector('#createdAt');
-const updateElement = document.querySelector('#updatedAt');
-const publishElement = document.querySelector('#publishedAt')
-const imageElement = document.querySelector('#image');
+// Input products
+const nameElement = document.querySelector("#name");
+const priceElement = document.querySelector("#price");
+const discountElement = document.querySelector("#discount");
+const ratingElement = document.querySelector("#rating");
+const imageElement = document.querySelector("#image");
 
-// create function
-async function createProduct(){
-    // get products
-    const name= nameElement.value
-    const fee = Number(feeElement.value)
-    const discount = Number(discountElement.value)
-    const rating = Number(ratingElement.value)
-    const image = imageElement.files[0]
-    const imageUrl = await uploadImage(image);
 
-    const product = {
-       id: 2,
-       name,
-       fee,
-       discount,
-       rating,
-       images:[imageUrl.location]
+// Type value
+let type = null;
+let selectedButton = null;
 
-    };
-     // fetch to create products
+// get type from click btn
+document.getElementById("trending").addEventListener("click", function () {
+  type = "3";
+  resetBorder();
+  selectedButton = this;
+  this.style.border = "2px solid orange";
+});
 
- fetch('https://cms.istad.co/api/km-products',{
-     method:"POST",
-     body: JSON.stringify(product),
-     headers:{
-        "Content-Type": "application/json"
-     }
- }).then(res => res.json()).then(data => console.log(data))
+document.getElementById("flashsale").addEventListener("click", function () {
+  type = "1";
+  resetBorder();
+  selectedButton = this;
+  this.style.border = "2px solid orange";
+});
 
-} 
-  // upload image to server
-    async function uploadImage(image){
-     const formData = new FormData();
-     formData.append('file',image);
-     // send request
-     const res = await fetch('https://cms.istad.co/api/upload',{
+document.getElementById("amountOff").addEventListener("click", function () {
+  type = "4";
+  resetBorder();
+  selectedButton = this;
+  this.style.border = "2px solid orange";
+});
+
+document.getElementById("buy1get1").addEventListener("click", function () {
+  type = "2";
+  resetBorder();
+  selectedButton = this;
+  this.style.border = "2px solid orange";
+});
+
+document.getElementById("event").addEventListener("click", function () {
+  type = "6";
+  resetBorder();
+  selectedButton = this;
+  this.style.border = "2px solid orange";
+});
+
+function resetBorder() {
+  if (selectedButton) {
+    selectedButton.style.border = "none";
+  }
+}
+
+// get category from selected
+let category = 1;
+const dropdown = document.getElementById("dropdown");
+dropdown.addEventListener("change", (event) => {
+  category = event.target.value;
+});
+
+function createProduct() {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  // Get values of product
+  const product = {
+    name: nameElement.value,
+    price: Number(priceElement.value),
+    discount: Number(discountElement.value),
+    rating: Number(ratingElement.value),
+    type: type,
+    category: category,
+    // image: imageElement.value,
+  };
+
+  const raw = JSON.stringify({
+    data: product,
+  });
+
+  // Upload image
+  const formdata = new FormData();
+  formdata.append("files", imageElement.files[0], "/path/to/file");
+
+  const requestOptions = {
+    method: "POST",
+    body: formdata,
+    redirect: "follow",
+  };
+
+  fetch("https://cms.istad.co/api/upload", requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      const imageId = result[0].id; // Assuming the image ID is in the first element of the array
+      console.log("Image ID:", imageId);
+
+      // Add image ID to the product data
+      product.image = imageId;
+
+      // Create product after uploading the image
+      fetch("https://cms.istad.co/api/km-products", {
         method: "POST",
-        body: formData,
-     });
-     return res.json();
-    
-    }
-  
+        headers: myHeaders,
+        body: JSON.stringify({ data: product }),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result.data);
+          window.location.reload();
+          alert('You have created new discount Product successfully!');
+        })
+        .catch((error) => console.log("error", error));
+    })
+    .catch((error) => console.log("error", error));
+}
