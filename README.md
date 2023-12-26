@@ -68,7 +68,7 @@ Deployment: https://khmer-mart.vercel.app/src/index.html
 <!-- Page URL -->
 ## Page URL
 
-### User side
+### User side (not having account)
 
 01. [Home](https://khmer-mart.vercel.app/src/index.html) : /src/index.html
 02. [Sign in](https://khmer-mart.vercel.app/src/signIn.html) : /src/signIn.html
@@ -81,10 +81,14 @@ Deployment: https://khmer-mart.vercel.app/src/index.html
 09. [Buy1Get1](https://khmer-mart.vercel.app/src/BuyoneGetoneList.html) : /src/BuyoneGetoneList.html
 10. [Event](https://khmer-mart.vercel.app/src/event.html) : /src/event.html
 
-### Admin side
+### User side (having account) 
+01. [Home](https://khmer-mart.vercel.app/afterSignIn) : /afterSignIn
+02. [Add to Favourite](https://khmer-mart.vercel.app/afterSignIn/favourite.html) : /afterSignIn/favourite.html
 
-01. [Home](https://khmer-mart.vercel.app/admin/features/home.html) : /admin/features/home.html
-02. [Create](https://khmer-mart.vercel.app/admin/features/create.html) : /admin/features/create.html
-03. [Overview](https://khmer-mart.vercel.app/admin/features/read.html) : /admin/features/read.html
-04. [Update](https://khmer-mart.vercel.app/admin/features/update.html) : /admin/features/update.html
-05. [Delete](https://khmer-mart.vercel.app/admin/features/delete.html) : /admin/features/delete.html
+### Admin side
+01. [Login](https://khmer-mart.vercel.app/admin/features/login.html) : admin/features/login.html
+02. [Home](https://khmer-mart.vercel.app/admin/features/home.html) : /admin/features/home.html
+03. [Create](https://khmer-mart.vercel.app/admin/features/create.html) : /admin/features/create.html
+04. [Overview](https://khmer-mart.vercel.app/admin/features/read.html) : /admin/features/read.html
+05. [Update](https://khmer-mart.vercel.app/admin/features/update.html) : /admin/features/update.html
+06. [Delete](https://khmer-mart.vercel.app/admin/features/delete.html) : /admin/features/delete.html
