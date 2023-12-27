@@ -60,7 +60,7 @@ const fetchData = async (page) => {
       method: "GET",
     });
 
-    const amountOffCardContainer = document.querySelector("#amountOffDisplayCard");
+    const amountOffCardContainer = $("#amountOffDisplayCard");
     amountOffCardContainer.empty(); // Clear existing content
 
     const amountOffLists = response.data;
