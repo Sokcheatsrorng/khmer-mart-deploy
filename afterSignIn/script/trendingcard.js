@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(product);
         const productHTML = `
           <div class="bg-white rounded-2xl mt-2">
-            <a href="${product.url}">
+            <a href="/afterSignIn/detail-card.html">
               <img class="object-contain w-[480px] h-[350px] p-5 rounded-t-lg image-hover" src="https://cms.istad.co${product.attributes.image.data.attributes.url}" alt="" />
             </a>
             <div class="px-5 pb-5">
