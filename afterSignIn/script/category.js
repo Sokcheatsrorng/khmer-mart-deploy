@@ -9,7 +9,7 @@ const renderStars = (rating) => {
     return `${filledStars}${emptyStars}`;
 };
 
-const searchProductDisplay = ({ attributes }) => {
+const searchProductDisplay = ({attributes }) => {
     const { name, rating, price, image } = attributes;
     // get image name
     const imageName =
